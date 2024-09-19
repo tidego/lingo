@@ -7,7 +7,7 @@
     <meta name="Keywords" content="爱心代码">
     <meta name="Description" content="爱心代码">
     <link rel="shortcut icon" href="../picture/爱心.png" type="image/x-icon">
-<!--   github.com/he-weilai/love-code   -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         html,
         body {
@@ -24,37 +24,27 @@
         }
 
         .title {
-            width: 20%;
-            height: 30%;
-            /* 文字居中 */
+            width: 100%; /* 设置宽度为100%，保证文字可以在屏幕内水平居中 */
             text-align: center;
-            /* 字体大小 */
-            font-size: 30px;
-            /* 背景颜色 */
+            font-size: 2vw; /* 使用视口宽度单位，使字体大小根据屏幕大小调整 */
             background-color: transparent;
-            /* 文字颜色 */
             color: rgba(247, 110, 206, 0.829);
-            /* 左右居中 */
-            margin: auto;
-            /* 定位 */
-            position: relative;
-            /* 上边距 */
-            top: 40%;
-            /* 字体 */
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* 确保元素在屏幕中心 */
             font-family: "幼圆";
+            line-height: 1.2; /* 确保多行文字有足够的间距 */
         }
     </style>
 
 </head>
 
 <body>
-
-
     <canvas id="pinkboard"></canvas>
 
-    <div class="title">李超越，<br>ε٩(๑> ₃ <)۶з</div>
+    <div class="title">李超越<br>ε٩(๑> ₃ <)۶з</div>
     <script>
-
         var settings = {
             particles: {
                 length: 500,
@@ -197,14 +187,12 @@
                 particleRate = settings.particles.length / settings.particles.duration,
                 time;
 
-
             function pointOnHeart(t) {
                 return new Point(
                     160 * Math.pow(Math.sin(t), 3),
                     130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
                 );
             }
-
 
             var image = (function () {
                 var canvas = document.createElement('canvas'),
@@ -238,19 +226,14 @@
                 return image;
             })();
 
-
             function render() {
-
                 requestAnimationFrame(render);
-
 
                 var newTime = new Date().getTime() / 1000,
                     deltaTime = newTime - (time || newTime);
                 time = newTime;
 
-
                 context.clearRect(0, 0, canvas.width, canvas.height);
-
 
                 var amount = particleRate * deltaTime;
                 for (var i = 0; i < amount; i++) {
@@ -259,11 +242,9 @@
                     particles.add(canvas.width / 2 + pos.x, canvas.height / 2 - pos.y, dir.x, -dir.y);
                 }
 
-
                 particles.update(deltaTime);
                 particles.draw(context, image);
             }
-
 
             function onResize() {
                 canvas.width = canvas.clientWidth;
@@ -271,16 +252,12 @@
             }
             window.onresize = onResize;
 
-
             setTimeout(function () {
                 onResize();
                 render();
             }, 10);
         })(document.getElementById('pinkboard'));
     </script>
-
-
-
 </body>
 
 </html>
