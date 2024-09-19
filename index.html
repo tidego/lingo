@@ -26,7 +26,7 @@
         .title {
             width: 100%; /* 设置宽度为100%，保证文字可以在屏幕内水平居中 */
             text-align: center;
-            font-size: 3vw; /* 使用视口宽度单位，使字体大小根据屏幕大小调整 */
+            font-size: 2vw; /* 使用视口宽度单位，使字体大小根据屏幕大小调整 */
             background-color: transparent;
             color: rgba(247, 110, 206, 0.829);
             position: absolute;
@@ -43,7 +43,7 @@
 <body>
     <canvas id="pinkboard"></canvas>
 
-    <div class="title">xxx<br>ε٩(๑> ₃ <)۶з</div>
+    <div class="title">李超越<br>ε٩(๑> ₃ <)۶з</div>
     <script>
         var settings = {
             particles: {
@@ -102,13 +102,6 @@
                 this.acceleration.y = dy * settings.particles.effect;
                 this.age = 0;
             };
-/*************  ✨ Codeium Command ⭐  *************/
-            /**
-             * Updates the particle by the given deltaTime.
-             *
-             * @param {Number} deltaTime - The time elapsed since last update.
-             */
-/******  8ad1b1a0-2d04-4207-83e6-d1721e08bf6e  *******/
             Particle.prototype.update = function (deltaTime) {
                 this.position.x += this.velocity.x * deltaTime;
                 this.position.y += this.velocity.y * deltaTime;
