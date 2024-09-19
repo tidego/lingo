@@ -43,11 +43,12 @@
 <body>
     <canvas id="pinkboard"></canvas>
 
-    <div class="title">李超越<br>ε٩(๑> ₃ <)۶з</div>
+    <div class="title">xxx<br>ε٩(๑> ₃ <)۶з</div>
     <script>
         var settings = {
             particles: {
-                length: 500,
+                length: 300,
+                width: 30,
                 duration: 2,
                 velocity: 100,
                 effect: -0.75,
@@ -101,6 +102,13 @@
                 this.acceleration.y = dy * settings.particles.effect;
                 this.age = 0;
             };
+/*************  ✨ Codeium Command ⭐  *************/
+            /**
+             * Updates the particle by the given deltaTime.
+             *
+             * @param {Number} deltaTime - The time elapsed since last update.
+             */
+/******  8ad1b1a0-2d04-4207-83e6-d1721e08bf6e  *******/
             Particle.prototype.update = function (deltaTime) {
                 this.position.x += this.velocity.x * deltaTime;
                 this.position.y += this.velocity.y * deltaTime;
